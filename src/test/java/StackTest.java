@@ -55,4 +55,12 @@ public class StackTest {
         stack.push(1);
         assertThat(stack.pop(), is(1));
     }
+
+    @Test
+    public void whenOneAndTwoArePushed_TwoAndOneArePopped() {
+        stack.push(1);
+        stack.push(2);
+        assertThat(stack.pop(), is(2));
+        assertThat(stack.pop(), is(1));
+    }
 }
