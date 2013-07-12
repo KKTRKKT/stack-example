@@ -2,7 +2,7 @@ public class Stack {
     private int size = 0;
 
     public Boolean isEmpty() {
-        return true;
+        return size == 0;
     }
 
     public Integer getSize() {

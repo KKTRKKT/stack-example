@@ -16,5 +16,6 @@ public class StackTest {
         Stack stack = new Stack();
         stack.push(1);
         assertThat(stack.getSize(), is(1));
+        assertThat(stack.isEmpty(), is(false));
     }
 }
