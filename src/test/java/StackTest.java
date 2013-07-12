@@ -63,4 +63,11 @@ public class StackTest {
         assertThat(stack.pop(), is(2));
         assertThat(stack.pop(), is(1));
     }
+
+    @Test
+    public void
+    whenOneIsPushed_OneIsOnTop() {
+        stack.push(1);
+        assertThat(stack.top(), is(1));
+    }
 }

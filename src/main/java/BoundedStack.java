@@ -28,6 +28,10 @@ public class BoundedStack implements Stack {
         return elements[--size];
     }
 
+    public Integer top() {
+        return elements[size - 1];
+    }
+
     public static Stack make(int capacity) {
         if(capacity < 0)
             throw new IllegalCapacity();
@@ -61,6 +65,10 @@ public class BoundedStack implements Stack {
 
         public int pop() {
             throw new Underflow();
+        }
+
+        public Integer top() {
+            return null;
         }
     }
 }

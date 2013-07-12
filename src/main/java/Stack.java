@@ -13,4 +13,6 @@ public interface Stack {
     void push(int element);
 
     int pop();
+
+    Integer top();
 }
