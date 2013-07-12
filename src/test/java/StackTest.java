@@ -49,4 +49,10 @@ public class StackTest {
     public void whenEmptyStackIsPopped_StackUnderflows() {
         stack.pop();
     }
+
+    @Test
+    public void whenOneIsPushed_OneIsPopped() {
+        stack.push(1);
+        assertThat(stack.pop(), is(1));
+    }
 }

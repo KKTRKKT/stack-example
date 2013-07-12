@@ -1,6 +1,7 @@
 public class Stack {
     private int size = 0;
     private int capacity;
+    private int element;
 
     public Stack(int capacity) {
         this.capacity = capacity;
@@ -17,6 +18,7 @@ public class Stack {
     public void push(int element) {
         if(size == capacity)
             throw new Overflow();
+        this.element = element;
         size++;
     }
 
@@ -24,7 +26,7 @@ public class Stack {
         if(size == 0)
             throw new Underflow();
         size--;
-        return 0;
+        return element;
     }
 
     public static Stack make(int capacity) {
