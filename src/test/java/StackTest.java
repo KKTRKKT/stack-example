@@ -76,4 +76,13 @@ public class StackTest {
     whenStackIsEmpty_TopThrowsEmpty() {
         stack.top();
     }
+
+    @Test
+    public void
+    whenOneAndTwoArePushed_findOneReturnsIndex() {
+        stack.push(1);
+        stack.push(2);
+        assertThat(stack.find(1), is(1));
+        assertThat(stack.find(2), is(0));
+    }
 }

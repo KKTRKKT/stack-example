@@ -16,6 +16,8 @@ public interface Stack {
 
     Integer top();
 
+    Integer find(int element);
+
     public class Empty extends RuntimeException {
     }
 }

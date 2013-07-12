@@ -34,6 +34,13 @@ public class BoundedStack implements Stack {
         return elements[size - 1];
     }
 
+    public Integer find(int element) {
+        for(int i = size - 1; i >= 0; i--)
+            if(elements[i] == element)
+                return size - 1 - i;
+        return -1;
+    }
+
     public static Stack make(int capacity) {
         if(capacity < 0)
             throw new IllegalCapacity();
@@ -71,6 +78,10 @@ public class BoundedStack implements Stack {
 
         public Integer top() {
             return null;
+        }
+
+        public Integer find(int element) {
+            return -1;
         }
     }
 }
