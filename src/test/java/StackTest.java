@@ -8,5 +8,6 @@ public class StackTest {
     public void newlyCreatedStack_shouldBeEmpty() {
         Stack stack = new Stack();
         assertThat(stack.isEmpty(), is(true));
+        assertThat(stack.getSize(), is(0));
     }
 }
