@@ -32,23 +32,7 @@ public class BoundedStack implements Stack {
         if(capacity < 0)
             throw new IllegalCapacity();
         if(capacity == 0)
-            return new Stack() {
-                public Boolean isEmpty() {
-                    return true;
-                }
-
-                public Integer getSize() {
-                    return 0;
-                }
-
-                public void push(int element) {
-                    throw new Overflow();
-                }
-
-                public int pop() {
-                    throw new Underflow();
-                }
-            };
+            return new ZeroCapacityStack();
 
         return new BoundedStack(capacity);
     }
@@ -60,5 +44,23 @@ public class BoundedStack implements Stack {
     }
 
     public static class Underflow extends RuntimeException {
+    }
+
+    private static class ZeroCapacityStack implements Stack {
+        public Boolean isEmpty() {
+            return true;
+        }
+
+        public Integer getSize() {
+            return 0;
+        }
+
+        public void push(int element) {
+            throw new Overflow();
+        }
+
+        public int pop() {
+            throw new Underflow();
+        }
     }
 }
