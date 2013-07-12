@@ -26,9 +26,14 @@ public class Stack {
     }
 
     public static Stack make(int capacity) {
+        if(capacity < 0)
+            throw new IllegalCapacity();
         return new Stack(capacity);
     }
 
     public class Overflow extends RuntimeException {
+    }
+
+    public static class IllegalCapacity extends RuntimeException {
     }
 }

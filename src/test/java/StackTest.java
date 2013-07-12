@@ -39,4 +39,9 @@ public class StackTest {
         stack.push(1);
         stack.push(1);
     }
+
+    @Test(expected = Stack.IllegalCapacity.class)
+    public void whenCreatingStackWithNegativeSize_shouldThrowIllegalCapacity() {
+        Stack.make(-1);
+    }
 }
