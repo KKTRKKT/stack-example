@@ -25,4 +25,11 @@ public class StackTest {
         assertThat(stack.getSize(), is(1));
         assertThat(stack.isEmpty(), is(false));
     }
+
+    @Test
+    public void afterOnePushAndOnePop_shouldBeEmpty() {
+        stack.push(1);
+        stack.pop();
+        assertThat(stack.isEmpty(), is(true));
+    }
 }

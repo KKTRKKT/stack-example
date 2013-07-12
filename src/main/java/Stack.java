@@ -12,4 +12,9 @@ public class Stack {
     public void push(int element) {
         size++;
     }
+
+    public int pop() {
+        size--;
+        return 0;
+    }
 }
