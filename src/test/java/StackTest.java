@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -84,5 +85,11 @@ public class StackTest {
         stack.push(2);
         assertThat(stack.find(1), is(1));
         assertThat(stack.find(2), is(0));
+    }
+
+    @Test
+    public void
+    whenStackHasNo2_find2ShouldReturnNull() {
+        assertThat(stack.find(2), is(nullValue()));
     }
 }

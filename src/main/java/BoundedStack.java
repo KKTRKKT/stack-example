@@ -38,7 +38,7 @@ public class BoundedStack implements Stack {
         for(int i = size - 1; i >= 0; i--)
             if(elements[i] == element)
                 return size - 1 - i;
-        return -1;
+        return null;
     }
 
     public static Stack make(int capacity) {
@@ -81,7 +81,7 @@ public class BoundedStack implements Stack {
         }
 
         public Integer find(int element) {
-            return -1;
+            return null;
         }
     }
 }
