@@ -10,4 +10,11 @@ public class StackTest {
         assertThat(stack.isEmpty(), is(true));
         assertThat(stack.getSize(), is(0));
     }
+
+    @Test
+    public void afterOnePush_StackSizeShouldBeOne() {
+        Stack stack = new Stack();
+        stack.push(1);
+        assertThat(stack.getSize(), is(1));
+    }
 }
