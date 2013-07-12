@@ -23,13 +23,13 @@ public class BoundedStack implements Stack {
     }
 
     public int pop() {
-        if(size == 0)
+        if(isEmpty())
             throw new Underflow();
         return elements[--size];
     }
 
     public Integer top() {
-        if(size == 0)
+        if(isEmpty())
             throw new Empty();
         return elements[size - 1];
     }
