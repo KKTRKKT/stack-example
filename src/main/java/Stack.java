@@ -21,6 +21,8 @@ public class Stack {
     }
 
     public int pop() {
+        if(size == 0)
+            throw new Underflow();
         size--;
         return 0;
     }
@@ -35,5 +37,8 @@ public class Stack {
     }
 
     public static class IllegalCapacity extends RuntimeException {
+    }
+
+    public class Underflow extends RuntimeException {
     }
 }

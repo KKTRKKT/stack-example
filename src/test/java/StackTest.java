@@ -44,4 +44,9 @@ public class StackTest {
     public void whenCreatingStackWithNegativeSize_shouldThrowIllegalCapacity() {
         Stack.make(-1);
     }
+
+    @Test(expected = Stack.Underflow.class)
+    public void whenEmptyStackIsPopped_StackUnderflows() {
+        stack.pop();
+    }
 }
