@@ -10,7 +10,7 @@ public class StackTest {
 
     @Before
     public void setUp() {
-        stack = new Stack();
+        stack = new Stack(10);
     }
 
     @Test
@@ -31,5 +31,12 @@ public class StackTest {
         stack.push(1);
         stack.pop();
         assertThat(stack.isEmpty(), is(true));
+    }
+
+    @Test(expected = Stack.Overflow.class)
+    public void whenPushedOverCapacity_StackOverflows() {
+        stack = Stack.make(1);
+        stack.push(1);
+        stack.push(1);
     }
 }
