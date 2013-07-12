@@ -15,4 +15,7 @@ public interface Stack {
     int pop();
 
     Integer top();
+
+    public class Empty extends RuntimeException {
+    }
 }

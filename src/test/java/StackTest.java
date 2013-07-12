@@ -70,4 +70,10 @@ public class StackTest {
         stack.push(1);
         assertThat(stack.top(), is(1));
     }
+
+    @Test(expected = Stack.Empty.class)
+    public void
+    whenStackIsEmpty_TopThrowsEmpty() {
+        stack.top();
+    }
 }

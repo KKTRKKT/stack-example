@@ -29,6 +29,8 @@ public class BoundedStack implements Stack {
     }
 
     public Integer top() {
+        if(size == 0)
+            throw new Empty();
         return elements[size - 1];
     }
 
