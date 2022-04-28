@@ -10,7 +10,7 @@ public class StackTest {
 
     @Before
     public void setUp() {
-        stack = new Stack(10);
+        stack = new BoundedStack(10);
     }
 
     @Test
@@ -33,19 +33,19 @@ public class StackTest {
         assertThat(stack.isEmpty(), is(true));
     }
 
-    @Test(expected = Stack.Overflow.class)
+    @Test(expected = BoundedStack.Overflow.class)
     public void whenPushedOverCapacity_StackOverflows() {
-        stack = Stack.make(1);
+        stack = BoundedStack.make(1);
         stack.push(1);
         stack.push(1);
     }
 
-    @Test(expected = Stack.IllegalCapacity.class)
+    @Test(expected = BoundedStack.IllegalCapacity.class)
     public void whenCreatingStackWithNegativeSize_shouldThrowIllegalCapacity() {
-        Stack.make(-1);
+        BoundedStack.make(-1);
     }
 
-    @Test(expected = Stack.Underflow.class)
+    @Test(expected = BoundedStack.Underflow.class)
     public void whenEmptyStackIsPopped_StackUnderflows() {
         stack.pop();
     }
